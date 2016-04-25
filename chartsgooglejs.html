@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src "https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	
+	google.load('visualization','1.0',{'pakages':['corechart']});
+
+	google.setOnLoadCallBack(dibujar);
+	
+	function dibujar(){
+		var data = new google.visualization.DataTable();
+		
+		/* crear coloumnas*/
+		data.addColum('string','Ciudad');
+		data.addColum('number','visitas');
+		
+		/*crear filas*/
+		data.addRows(
+			[
+
+			['Medellin',700],
+			['Bogota',452],
+			['Cartagena',785],
+			['Pereira',410],
+
+			]
+
+			);
+
+		var opciones={'title':'visitas de mi web',
+		'width':500,
+		'height':300};
+		var grafica= new google.visualization.AreaChart(document.getElementById('Charts'));
+		grafico.draw(data,opciones);
+
+
+
+	}
+
+
+</script>
+	</head>
+		<body>
+		<div id="charts"></div>
+	
+		</body>
+</html>
